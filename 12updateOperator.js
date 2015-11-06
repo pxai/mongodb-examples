@@ -1,34 +1,26 @@
 /**
- * Simple update simple
+ * Simple update single
  * Pello Altadill
  */
 //two queries, not very efficient
+// just one query
 var MongoClient = require('mongodb').MongoClient;
 
 MongoClient.connect('mongodb://localhost:27017/school', function(err, db) {
    if(err) throw err;
 
    var query = { 'assignment' : 'hw1' };
+   var operator = { '$set' : { 'date_returned' : new Date() } };
 
-   db.collection('marks').findOne(query, function(err, doc) {
+   db.collection('marks').update(query, operator, function(err, updated) {
        if(err) throw err;
-       if(!doc) {
-           console.log('No documents for assignment ' + query.assignment + ' found!');
-           return db.close();
-       }
 
-       query['_id'] = doc['_id'];
-       doc['date_returned'] = new Date();
+       console.dir("Successfully updated " + updated + " document!");
 
-       db.collection('grades').update(query, doc, function(err, updated) {
-           if(err) throw err;
-
-           console.dir("Successfully updated " + updated + " document!");
-
-           return db.close();
-       });
+       return db.close();
    });
 });
+
 
 
 

@@ -1,5 +1,5 @@
 /**
- * Simple Dot Notation example
+ * Simple insert
  * Pello Altadill
  */
 //Here we give an _id field
