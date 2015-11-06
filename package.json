@@ -1,0 +1,27 @@
+{
+  "name": "mongodb-samples",
+  "version": "1.0.0",
+  "description": "Mongodb access samples",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pxai/mongodb-samples"
+  },
+  "keywords": [
+    "mongodb",
+    "node.js",
+    "samples"
+  ],
+  "author": "Pello Altadill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pxai/mongodb-samples/issues"
+  },
+  "homepage": "https://github.com/pxai/mongodb-samples",
+  "dependencies": {
+    "mongodb": "^2.0.48"
+  }
+}
